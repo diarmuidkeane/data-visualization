@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="theCanvas" width="540" height="600" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+class UnitCircle {
+//   let origin;
+//   let radius;
+//   constructor(origin,radius){
+//      drawCircleAtOrigin(origin,radius);
+//   }
+}
+
+//class ComplexUnitDisk extends UnitCircle {}
+//class Qubit extends UnitCircle {}
+const canvas = document.getElementById('theCanvas');
+const context = canvas.getContext('2d');
+//const alpha = new UnitCircle();
+//const beta = new UnitCircle();
+//const qubit = new UnitCircle();
+
+//let dragging;
+canvas.onmousedown=function(event){
+//  resolve();
+};
+
+canvas.onmousemove=function(event){
+//	if (dragging){
+//
+//	}
+};
+
+canvas.onmouseup=function(event){
+     console.log(event);
+//     resolvePoint()
+//   dragging=false;
+};
+
+const normalisationConstant = 100;
+
+function modulusSquared(vector){
+   vector.x * vector.x + vector.y * vector.y
+}
+
+function lengthSquared(lineSegment){
+   (lineSegment.a.x - lineSegment.b.x ) * (lineSegment.a.x - lineSegment.b.x ) +   (lineSegment.a.y - lineSegment.b.y ) * (lineSegment.a.y - lineSegment.b.y ) ;
+}
+
+function drawLine(point0 , point1) {
+	context.moveTo(point0.x,point0.y);
+	context.lineTo(point1.x,point1.y);
+    context.stroke();
+}
+
+function drawCircleAtOrigin(origin,radius) {
+    context.beginPath();
+	context.arc(origin.x, origin.y, radius, 0, Math.PI * 2 , true);
+    context.stroke();
+}
+
+
+drawCircleAtOrigin({x:100,y:100},90);
+drawCircleAtOrigin({x:300,y:100},90);
+const originQubit = {x:200,y:384};
+drawCircleAtOrigin(originQubit,180);
+drawLine(originQubit,{x:240,y:278})
+
+</script>
+ 
+</body>
+</html>
